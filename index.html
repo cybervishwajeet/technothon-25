@@ -1,0 +1,81 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Chat Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+            <!-- Add these hidden file inputs after the container div -->
+            <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
+            <input type="file" id="videoInput" accept="video/*" style="display: none;">
+            <input type="file" id="audioInput" accept="audio/*" style="display: none;">
+            <input type="file" id="folderInput" webkitdirectory directory multiple style="display: none;">
+        <!-- History Sidebar -->
+        <div class="history-sidebar" id="historySidebar">
+            <div class="history-header">
+                <h2>History</h2>
+                <div class="digital-clock" id="clock">00:00:00</div>
+            </div>
+            <div class="history-list" id="historyList">
+                <!-- History items will be added here dynamically -->
+            </div>
+        </div>
+
+         <!-- Main Chat Area -->
+         <div class="main-content">
+            <!-- Welcome Message -->
+            <div class="welcome-message">
+                <h1>Hi, how can I help you today?</h1>
+            </div>
+
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-box">
+                    <button class="options-btn" id="optionsBtn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    
+                    <div class="options-dropdown" id="optionsDropdown">
+                        <div class="option-item" data-type="pdf">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>PDF File</span>
+                        </div>
+                        <div class="option-item" data-type="folder">
+                            <i class="fas fa-folder"></i>
+                            <span>Folder</span>
+                        </div>
+                        <div class="option-item" data-type="video">
+                            <i class="fas fa-video"></i>
+                            <span>Video</span>
+                        </div>
+                        <div class="option-item" data-type="github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="option-item" data-type="audio">
+                            <i class="fas fa-music"></i>
+                            <span>Audio</span>
+                        </div>
+                        <div class="option-item" data-type="youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </div>
+                    </div>
+                    
+                    <textarea id="promptInput" placeholder="Type your message here..."></textarea>
+                    
+                    <button class="submit-btn" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>
